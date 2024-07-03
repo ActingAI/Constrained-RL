@@ -74,12 +74,3 @@ ENVNAME={
     "easy",
     "hard"
 } ("easy" by default)
-
-## Possible References
-```
-Ha, David. "Reinforcement learning for improving agent design." Artificial life 25.4 (2019): 352-365.
-
-Yuan, Ye, et al. "Transform2act: Learning a transform-and-control policy for efficient agent design." arXiv preprint arXiv:2110.03659 (2021).
-
-Schaff, Charles, et al. "Jointly learning to construct and control agents using deep reinforcement learning." 2019 international conference on robotics and automation (ICRA). IEEE, 2019.
-```

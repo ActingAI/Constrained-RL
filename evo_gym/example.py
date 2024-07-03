@@ -4,6 +4,7 @@ import gym_compete
 import gymnasium as gym
 from config.config import Config
 import argparse
+import numpy as np
 
 def str2bool(input_str):
     """Converts a string to a boolean value.
@@ -43,8 +44,9 @@ env = gym.make(cfg.env_name, cfg=cfg, render_mode="human")
 obs, _ = env.reset()
 
 for _ in range(10000):
-   action = env.action_space.sample()  # this is where you would insert your policy
-   observation, reward, terminated, truncated, info = env.step(action)
+   action_ = env.agents[0].action_space.sample()  # this is where you would insert your policy
+   action = np.concatenate((env.agents[0].scale_vector, action_))
+   observation, reward, terminated, truncated, info = env.step([action])
 
    if any(terminated) or truncated:
       observation, info = env.reset()
